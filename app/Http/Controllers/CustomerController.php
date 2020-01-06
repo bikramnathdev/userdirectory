@@ -94,13 +94,20 @@ class CustomerController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'address'=>'required',
-            'file'=>'required'
+            'address'=>'required'
         ]);
-        $request->file('file')->store('images');
-        $filename = $request->file->getClientOriginalName();
-        Customer::where('id',$id)
-        ->update(['name'=>$request['name'],'address'=>$request['address'],'filename'=>$filename]);
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+            $filename = $file->getClientOriginalName();
+            $filename = str_replace(' ','',$filename);
+            $path = $file->storeAs('public/images/', $filename);
+            Customer::where('id',$id)
+            ->update(['name'=>$request['name'],'address'=>$request['address'],'filename'=>$filename]);
+        }
+        else{
+            Customer::where('id',$id)
+            ->update(['name'=>$request['name'],'address'=>$request['address']]);
+        }
         return redirect('/customer')->with('success','Customer Details Updated');
     }
 

@@ -18,8 +18,9 @@
                   </div>
                   <div class="form-group">
                     <label for="file" class="col-form-label">File:</label>
-                    <span>{{$customer->filename}}</span>
-                    <input type="file" value="{{$customer->file}}" class="form-control" id="file" name="file" required>
+                    <span>{{$customer->filename}} - <a target="_blank"
+                        href="{{url('/')}}{{ Storage::url('images/'.$customer->filename)}}">View File</a></span>
+                    <input type="file" value="{{$customer->file}}" class="form-control" id="file" name="file">
                   </div>
                 <a type="button" class="btn btn-secondary" href="{{url('customer')}}">Cancel</a>
                 <button type="submit" class="btn btn-primary float-right">Save</button>
