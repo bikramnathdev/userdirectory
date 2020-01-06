@@ -21,7 +21,9 @@
                             Top 5 seller
                         </div>
                         <div class="card-body">
-                            @if (count($top_five)<1) No Agent Found @else <table class="table">
+                            @if (count($top_five)<1) No Agent Found
+                            @else
+                            <table class="table table-responsive">
                                 <thead>
                                     <tr>
                                         <th scope="col" class="text-center">#</th>
@@ -51,11 +53,10 @@
                             More than 10 Items Sold By:
                         </div>
                         <div class="card-body">
-
-
-                            @if (count($customers)<1) No Agent Found
+                            @if (count($customers)<1)
+                             No Agent Found
                             @else
-                             <table class="table">
+                             <table class="table table-responsive">
                                 <thead>
                                     <tr>
                                         <th scope="col" class="text-center">#</th>
