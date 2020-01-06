@@ -25,6 +25,9 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    @if (count($customers<1))
+                        Add Customer
+                    @else
                     <table class="table">
                         <thead>
                             <tr>
@@ -84,6 +87,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @endif
                 </div>
                 <div class="justify-content-center">
                     {{$customers->links()}}
