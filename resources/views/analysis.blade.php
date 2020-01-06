@@ -53,7 +53,9 @@
                         <div class="card-body">
 
 
-                            @if (count($customers)<1) No Agent Found @else <table class="table">
+                            @if (count($customers)<1) No Agent Found
+                            @else
+                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col" class="text-center">#</th>
