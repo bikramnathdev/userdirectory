@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    @if (count($customers<1))
+                    @if (count($customers)<1)
                         Add Customer
                     @else
                     <table class="table">
@@ -67,9 +67,10 @@
                                     @endif
                                 </td>
                                 <td class="text-center">{{$customer->sold_item}}</td>
-                                <td class="text-center"><a
-                                        href="{{url('/')}}{{ Storage::url('app/images/'.$customer->filename)}}">View
-                                        File</a></td>
+                                <td class="text-center"><a target="_blank"
+                                        href="{{url('/')}}{{ Storage::url('images/'.$customer->filename)}}">View
+                                        File</a>
+                                </td>
                                 <td class="text-center">
                                     <div>
                                         <span class="float-left"><a href="/customer/{{$customer->id}}/edit"

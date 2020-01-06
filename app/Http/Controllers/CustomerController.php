@@ -48,7 +48,7 @@ class CustomerController extends Controller
         $file = $request->file('file');
         $filename = $file->getClientOriginalName();
         $filename = str_replace(' ','',$filename);
-        $path = $file->storeAs('images/', $filename);
+        $path = $file->storeAs('public/images/', $filename);
         $customer = new Customer();
         $customer->name = $request['name'];
         $customer->address = $request['address'];
