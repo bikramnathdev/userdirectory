@@ -90,9 +90,6 @@
                     </table>
                     @endif
                 </div>
-                <div class="justify-content-center">
-                    {{$customers->links()}}
-                </div>
             </div>
         </div>
     </div>
@@ -132,25 +129,6 @@
                     </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary float-right">Save</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal" id="deleteModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="{{url('customer/'.$customer->id)}}" method="post">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button class="btn btn-info" type="button">Cancel</button>
-                    <button class="btn btn-danger float-right" type="submit">Delete</button>
                 </form>
             </div>
         </div>
