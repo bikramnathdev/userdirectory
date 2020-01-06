@@ -8,12 +8,12 @@
                 <div class="card-header">
                     Total Item Sold
                 </div>
-                <div class="card-body">
+                <div class="card-body text-center">
                     As of now, Total {{$total_sell}} have been sold
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 mt-5">
             <div class="row">
                 <div class="col-md-6">
                     <div class="card">
